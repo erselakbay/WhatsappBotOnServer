@@ -87,7 +87,7 @@ client.on('message', msg => {
     }
 
 
-    else if (msg.body == 'sa' || msg.body == "Sa" || msg.body == "SA" || msg.body == "selamun aleykum"|| msg.body == "selamun aleyküm" || msg.body == "Selamun Aleykum"|| msg.body == "Selamun Aleyküm" || msg.body == "Selamınaleyküm" || msg.body == "selamunaleyküm" || msg.body == "Selamın Aleyküm" || msg.body == "Selamın aleyküm") 
+    else if (msg.body == 'sa' || msg.body == "Sa" || msg.body == "SA" || msg.body == "selamun aleykum"|| msg.body == "selamun aleyküm" || msg.body == "Selamun Aleykum"|| msg.body == "Selamun Aleyküm" || msg.body == "Selamınaleyküm" || msg.body == "selamunaleyküm" || msg.body == "Selamın Aleyküm" || msg.body == "Selamın aleyküm" || msg.body == "Selamunaleykum" || msg.body == "Selamun aleyküm") 
     {
         
         client.sendMessage(msg.from, 'aleyküm selam ve rahmetullahi ve berekatuhu ve magfiratuhu ebeden ve daimen. ')
@@ -112,6 +112,8 @@ client.on('message', msg => {
             var durum= x.weather[0].description
             if (durum=="overcast clouds")
             {durum="kapalı bulutlar"}
+            if (durum=="scattered clouds")
+            {durum="parcalı bulutlar"}
             var sicaklik = x.main.temp.toString()
             sicaklik=sicaklik - 272
             //sicaklik=sicaklik.substring(0, 4)
