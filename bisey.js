@@ -111,9 +111,11 @@ client.on('message', msg => {
           var sehir= x.name
             var durum= x.weather[0].description
             if (durum=="overcast clouds")
-            {durum="kapalı bulutlar"}
+            {durum="kapalı, bulutlu"}
             if (durum=="scattered clouds")
-            {durum="parcalı bulutlar"}
+            {durum="parcalı bulutlu"}
+            if (durum=="clear sky")
+            {durum="gökyüzü açık"}
             var sicaklik = x.main.temp.toString()
             sicaklik=sicaklik - 272
             //sicaklik=sicaklik.substring(0, 4)
@@ -123,7 +125,7 @@ client.on('message', msg => {
             //hissedilen=hissedilen.substring(0, 4)
             var ruzgar=x.wind.speed.toString()
             
-            if (hours>=7 && hours < 11)
+            if (hours>=6 && hours < 11)
           {
               client.sendMessage(msg.from,  "Günaydın! \n\nŞehir Adı: "+sehir+"\nHavanın Durumu: "+durum+"\nSıcaklık: "+sicaklik+"\nHissedilen Sıcaklık: "+hissedilen+"\nNem: "+nem+"\nRuzgar:"+ruzgar)
         }
@@ -136,7 +138,7 @@ client.on('message', msg => {
          {
             client.sendMessage(msg.from,  "İyi Akşamlar! \n\nŞehir Adı: "+sehir+"\nHavanın Durumu: "+durum+"\nSıcaklık: "+sicaklik+"\nHissedilen Sıcaklık: "+hissedilen+"\nNem: "+nem+"\nRuzgar:"+ruzgar)
          } 
-         if (hours>=21 && hours < 23)
+         if (hours>=21 && hours < 24)
          {
             client.sendMessage(msg.from,  "İyi Geceler! \n\nŞehir Adı: "+sehir+"\nHavanın Durumu: "+durum+"\nSıcaklık: "+sicaklik+"\nHissedilen Sıcaklık: "+hissedilen+"\nNem: "+nem+"\nRuzgar:"+ruzgar)
          }
