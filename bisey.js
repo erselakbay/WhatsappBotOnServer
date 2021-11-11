@@ -116,13 +116,15 @@ client.on('message', msg => {
             {durum="parcalı bulutlu"}
             if (durum=="clear sky")
             {durum="gökyüzü açık"}
+            if (durum=="few clouds")
+            {durum="az bulutlu"}
             var sicaklik = x.main.temp.toString()
             sicaklik=sicaklik - 272
-            //sicaklik=sicaklik.substring(0, 4)
+            sicaklik= sicaklik.toFixed(2);
             var nem = x.main.humidity.toString()
             var hissedilen= x.main.feels_like.toString()
             hissedilen=hissedilen - 272
-            //hissedilen=hissedilen.substring(0, 4)
+            hissedilen= hissedilen.toFixed(2);
             var ruzgar=x.wind.speed.toString()
             
             if (hours>=6 && hours < 11)
