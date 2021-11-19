@@ -52,6 +52,10 @@ client.on('ready', () => {
 
 client.on('message', msg => {
 
+    if(msg.isStatus)
+    {
+        return;
+    }
     let date_ob = new Date();
     let hours = date_ob.getHours();
 
@@ -116,7 +120,7 @@ client.on('message', msg => {
             var durum= x.weather[0].description
             if (durum=="overcast clouds")
             {durum="kapalı, bulutlu"
-            oneri= "Bugün yağmurluğunuzu yanınıza almanızda fayda var"}
+            oneri= "Öneri: Bugün yağmurluğunuzu yanınıza almanızda fayda var"}
             if (durum=="scattered clouds")
             {durum="parçalı bulutlu"}
             if (durum=="clear sky")
@@ -139,10 +143,10 @@ client.on('message', msg => {
             if (hissedilen<6)
             { 
                 var cumle = "Dışarısı fazla soğuk görünüyor. Dikkatli olun!"
-                client.sendMessage(msg.from,  "Günaydın! \n\nŞehir Adı: "+sehir+"\nHavanın Durumu: "+durum+"\nSıcaklık: "+sicaklik+"\nHissedilen Sıcaklık: "+hissedilen+"\nNem: "+nem+"\nRuzgar: "+ruzgar + "\nÖneri: " + oneri +"\n\n" + cumle)
+                client.sendMessage(msg.from,  "Günaydın! \n\nŞehir Adı: "+sehir+"\nHavanın Durumu: "+durum+"\nSıcaklık: "+sicaklik+"\nHissedilen Sıcaklık: "+hissedilen+"\nNem: "+nem+"\nRuzgar: "+ruzgar +  oneri +"\n\n" + cumle)
             }
             else{
-              client.sendMessage(msg.from,  "Günaydın! \n\nŞehir Adı: "+sehir+"\nHavanın Durumu: "+durum+"\nSıcaklık: "+sicaklik+"\nHissedilen Sıcaklık: "+hissedilen+"\nNem: "+nem+"\nRuzgar: "+ruzgar + "\nÖneri: " + oneri )
+              client.sendMessage(msg.from,  "Günaydın! \n\nŞehir Adı: "+sehir+"\nHavanın Durumu: "+durum+"\nSıcaklık: "+sicaklik+"\nHissedilen Sıcaklık: "+hissedilen+"\nNem: "+nem+"\nRuzgar: "+ruzgar  + oneri )
             }
         }
         if (hours>=11 && hours < 17)
@@ -150,10 +154,10 @@ client.on('message', msg => {
             if (hissedilen<6)
             { 
                 var cumle = "Dışarısı fazla soğuk görünüyor. Dikkatli olun!"
-            client.sendMessage(msg.from,  "Mutlu Günler! \n\nŞehir Adı: "+sehir+"\nHavanın Durumu: "+durum+"\nSıcaklık: "+sicaklik+"\nHissedilen Sıcaklık: "+hissedilen+"\nNem: "+nem+"\nRuzgar: "+ruzgar + "\nÖneri: " + oneri+"\n\n" + cumle )
+            client.sendMessage(msg.from,  "Mutlu Günler! \n\nŞehir Adı: "+sehir+"\nHavanın Durumu: "+durum+"\nSıcaklık: "+sicaklik+"\nHissedilen Sıcaklık: "+hissedilen+"\nNem: "+nem+"\nRuzgar: "+ruzgar  + oneri+"\n\n" + cumle )
             }
             else{
-                client.sendMessage(msg.from,  "Mutlu Günler! \n\nŞehir Adı: "+sehir+"\nHavanın Durumu: "+durum+"\nSıcaklık: "+sicaklik+"\nHissedilen Sıcaklık: "+hissedilen+"\nNem: "+nem+"\nRuzgar: "+ruzgar + "\nÖneri: " + oneri)
+                client.sendMessage(msg.from,  "Mutlu Günler! \n\nŞehir Adı: "+sehir+"\nHavanın Durumu: "+durum+"\nSıcaklık: "+sicaklik+"\nHissedilen Sıcaklık: "+hissedilen+"\nNem: "+nem+"\nRuzgar: "+ruzgar  + oneri)
             }
          } 
          if (hours>=17 && hours < 21)
@@ -161,21 +165,21 @@ client.on('message', msg => {
             if (hissedilen<6)
             { 
                 var cumle = "Dışarısı fazla soğuk görünüyor. Dikkatli olun!"
-            client.sendMessage(msg.from,  "İyi Akşamlar! \n\nŞehir Adı: "+sehir+"\nHavanın Durumu: "+durum+"\nSıcaklık: "+sicaklik+"\nHissedilen Sıcaklık: "+hissedilen+"\nNem: "+nem+"\nRuzgar: "+ruzgar + "\nÖneri: " + oneri+"\n\n" + cumle )
+            client.sendMessage(msg.from,  "İyi Akşamlar! \n\nŞehir Adı: "+sehir+"\nHavanın Durumu: "+durum+"\nSıcaklık: "+sicaklik+"\nHissedilen Sıcaklık: "+hissedilen+"\nNem: "+nem+"\nRuzgar: "+ruzgar +  oneri+"\n\n" + cumle )
          }
         else{
-            client.sendMessage(msg.from,  "İyi Akşamlar! \n\nŞehir Adı: "+sehir+"\nHavanın Durumu: "+durum+"\nSıcaklık: "+sicaklik+"\nHissedilen Sıcaklık: "+hissedilen+"\nNem: "+nem+"\nRuzgar: "+ruzgar + "\nÖneri: " + oneri)
+            client.sendMessage(msg.from,  "İyi Akşamlar! \n\nŞehir Adı: "+sehir+"\nHavanın Durumu: "+durum+"\nSıcaklık: "+sicaklik+"\nHissedilen Sıcaklık: "+hissedilen+"\nNem: "+nem+"\nRuzgar: "+ruzgar +  oneri)
         } }
          if (hours>=21 && hours < 24)
          {
             if (hissedilen<6)
             { 
                 var cumle = "Dışarısı fazla soğuk görünüyor. Dikkatli olun!"
-            client.sendMessage(msg.from,  "İyi Geceler! \n\nŞehir Adı: "+sehir+"\nHavanın Durumu: "+durum+"\nSıcaklık: "+sicaklik+"\nHissedilen Sıcaklık: "+hissedilen+"\nNem: "+nem+"\nRuzgar: "+ruzgar + "\nÖneri: " + oneri +"\n\n" + cumle)
+            client.sendMessage(msg.from,  "İyi Geceler! \n\nŞehir Adı: "+sehir+"\nHavanın Durumu: "+durum+"\nSıcaklık: "+sicaklik+"\nHissedilen Sıcaklık: "+hissedilen+"\nNem: "+nem+"\nRuzgar: "+ruzgar  + oneri +"\n\n" + cumle)
              
         }
     else{
-        client.sendMessage(msg.from,  "İyi Geceler! \n\nŞehir Adı: "+sehir+"\nHavanın Durumu: "+durum+"\nSıcaklık: "+sicaklik+"\nHissedilen Sıcaklık: "+hissedilen+"\nNem: "+nem+"\nRuzgar: "+ruzgar + "\nÖneri: " + oneri )
+        client.sendMessage(msg.from,  "İyi Geceler! \n\nŞehir Adı: "+sehir+"\nHavanın Durumu: "+durum+"\nSıcaklık: "+sicaklik+"\nHissedilen Sıcaklık: "+hissedilen+"\nNem: "+nem+"\nRuzgar: "+ruzgar  + oneri )
     }
     }
          console.log("OK! ")
