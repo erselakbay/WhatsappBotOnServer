@@ -120,7 +120,7 @@ client.on('message', msg => {
             var durum= x.weather[0].description
             if (durum=="overcast clouds")
             {durum="kapalı, bulutlu"
-            oneri= "Öneri: Bugün yağmurluğunuzu yanınıza almanızda fayda var"}
+            oneri= "Öneri: Yağmur yağma ihtimaline karşın bugün şemsiyenizi yanınıza almanızda fayda var"}
             if (durum=="scattered clouds")
             {durum="parçalı bulutlu"}
             if (durum=="clear sky")
@@ -129,6 +129,9 @@ client.on('message', msg => {
             {durum="az bulutlu"}
             if (durum=="broken clouds")
             {durum="yer yer açık"}
+            if (durum=="shower rain")
+            {durum="Sağanak Yağışlı"
+            oneri= "Öneri: Dışarısı yağışlı görünüyor. Yağmurluğunuzu giymenizde fayda var"}
             var sicaklik = x.main.temp.toString()
             sicaklik=sicaklik - 272
             sicaklik= sicaklik.toFixed(2);
