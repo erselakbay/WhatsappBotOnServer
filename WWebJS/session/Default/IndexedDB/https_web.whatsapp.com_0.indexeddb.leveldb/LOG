@@ -1,0 +1,13 @@
+2021/11/30-21:30:37.119 210c Reusing MANIFEST D:\bos beles isler\wp js\WWebJS\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/11/30-21:30:37.120 210c Recovering log #21
+2021/11/30-21:30:37.153 210c Reusing old log D:\bos beles isler\wp js\WWebJS\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000021.log 
+2021/11/30-21:30:48.584 459c Level-0 table #26: started
+2021/11/30-21:30:48.673 459c Level-0 table #26: 313394 bytes OK
+2021/11/30-21:30:48.758 459c Delete type=0 #21
+2021/11/30-21:30:48.758 459c Manual compaction at level-0 from '\x00\x09\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0a\x00\x00\x00' @ 0 : 0; will stop at (end)
+2021/11/30-21:30:49.836 44d0 Compacting 1@1 + 1@2 files
+2021/11/30-21:30:49.947 44d0 Generated table #27@1: 285 keys, 10876 bytes
+2021/11/30-21:30:49.947 44d0 Compacted 1@1 + 1@2 files => 10876 bytes
+2021/11/30-21:30:49.980 44d0 compacted to: files[ 0 0 1 0 0 0 0 ]
+2021/11/30-21:30:49.980 44d0 Delete type=2 #23
+2021/11/30-21:30:49.980 44d0 Delete type=2 #26

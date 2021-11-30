@@ -9,6 +9,7 @@ var request = require("request");
 const client = new Client();
 var PersonList = new Array();
 
+var ekonomi = "https://freecurrencyapi.net/api/v2/latest?apikey=1011a820-5205-11ec-aaa3-61829d760e72";
 
 /*
 const express = require('express')
@@ -100,6 +101,47 @@ client.on('message', msg => {
         client.sendMessage(msg.from, 'Size en yakın zamanda dönüş yapacağım')
         PersonList=[];
     }
+    else if(gelen[0] == "!dolar" || gelen[0] == "!Dolar")
+    {
+        PersonList=[];
+
+        var options = { method: 'GET',
+          url: ekonomi,
+           };
+        
+        request(options, function (error, response, body) {
+            
+            var x = JSON.parse(response.body);
+
+
+            var ekonomidurum= x.data.TRY;
+            ekonomidurum= ekonomidurum.toFixed(2);
+            client.sendMessage(msg.from,  "Merhaba! \n\nUSD ANLIK: " + ekonomidurum);
+
+          })
+
+    }
+    else if(gelen[0] == "!euro" || gelen[0] == "!Euro")
+    {
+        PersonList=[];
+
+        var options = { method: 'GET',
+          url: ekonomi+'&base_currency=EUR',
+           };
+        
+        request(options, function (error, response, body) {
+            
+            var x = JSON.parse(response.body);
+
+
+            var ekonomidurum= x.data.TRY;
+            ekonomidurum= ekonomidurum.toFixed(2);
+            client.sendMessage(msg.from,  "Merhaba! \n\nEURO ANLIK: " + ekonomidurum);
+
+          })
+
+    }
+    
     else if(gelen[0] == "!havadurumu" || gelen[0] == "!Havadurumu")
     {
         PersonList=[];
@@ -116,11 +158,11 @@ client.on('message', msg => {
         return}
           if (error) throw new Error(error);
         
-          var sehir= x.name
+            var sehir= x.name
             var durum= x.weather[0].description
             if (durum=="overcast clouds")
             {durum="kapalı, bulutlu"
-            oneri= "Öneri: Yağmur yağma ihtimaline karşın bugün şemsiyenizi yanınıza almanızda fayda var."}
+            oneri= "\nÖneri: Yağmur yağma ihtimaline karşın bugün şemsiyenizi yanınıza almanızda fayda var."}
             if (durum=="scattered clouds")
             {durum="parçalı bulutlu"}
             if (durum=="clear sky")
@@ -201,7 +243,8 @@ client.on('message', msg => {
     else if (msg.body == '!komutlar' || msg.body == "!Komutlar") 
 
     {
-        client.sendMessage(msg.from, '!havadurumu sehiradi\n')
+        client.sendMessage(msg.from, '!havadurumu sehiradi\n' + '!dolar'+ '!euro')
+        
     }
 }
 
