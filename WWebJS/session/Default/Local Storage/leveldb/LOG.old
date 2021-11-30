@@ -1,6 +1,3 @@
-2021/11/30-21:27:31.222 53a8 Reusing MANIFEST D:\bos beles isler\wp js\WWebJS\session\Default\Local Storage\leveldb/MANIFEST-000001
-2021/11/30-21:27:31.222 53a8 Recovering log #3
-2021/11/30-21:27:31.223 53a8 Reusing old log D:\bos beles isler\wp js\WWebJS\session\Default\Local Storage\leveldb/000003.log 
-2021/11/30-21:29:31.593 224c Level-0 table #5: started
-2021/11/30-21:29:31.731 224c Level-0 table #5: 23571 bytes OK
-2021/11/30-21:29:31.766 224c Delete type=0 #3
+2021/11/30-22:53:45.941 d68 Reusing MANIFEST D:\bos beles isler\wp js\WWebJS\session\Default\Local Storage\leveldb/MANIFEST-000001
+2021/11/30-22:53:45.941 d68 Recovering log #4
+2021/11/30-22:53:45.941 d68 Reusing old log D:\bos beles isler\wp js\WWebJS\session\Default\Local Storage\leveldb/000004.log 

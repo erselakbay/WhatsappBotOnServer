@@ -63,8 +63,8 @@ client.on('message', msg => {
     var oneri = " "
 
     gelen=msg.body.split(' ')
-    
-
+    OyunList=['okey','bilardo','Gartic','Gartic Phone','Among Us','Human Fall Flat','13th friday','Pummel Party','Code Names','Agrou','Secret Neighbor','Ball 3D','Crab Game','Pico Park','Dont Starve Together'];
+    yazıtura=['yazı', 'tura'];
 
     if(hours>=0 && hours < 6)
     {
@@ -101,6 +101,29 @@ client.on('message', msg => {
         client.sendMessage(msg.from, 'Size en yakın zamanda dönüş yapacağım')
         PersonList=[];
     }
+
+    else if (msg.body == '!oyun' || msg.body == "!oyun") 
+    {
+        PersonList=[];
+        var rndgame =  OyunList[Math.floor(Math.random()*OyunList.length)];
+        client.sendMessage(msg.from, 'Bugünün Oyunu: ' + rndgame);
+
+    }
+    else if (msg.body == '!yazıtura' || msg.body == "!Yazıtura"|| msg.body == "!Yazitura"|| msg.body == "!yazitura") 
+    {
+        PersonList=[];
+        var yt =  yazıtura[Math.floor(Math.random()*yazıtura.length)];
+        client.sendMessage(msg.from,  yt + ' geldi');
+
+    }
+    else if (msg.body == '!zarat' || msg.body == "!Zarat") 
+    {
+        PersonList=[];
+        var zarr = Math.floor(Math.random() * 6) + 1;
+        client.sendMessage(msg.from, zarr + ' geldi');
+
+    }
+   
     else if(gelen[0] == "!dolar" || gelen[0] == "!Dolar")
     {
         PersonList=[];
@@ -116,7 +139,7 @@ client.on('message', msg => {
 
             var ekonomidurum= x.data.TRY;
             ekonomidurum= ekonomidurum.toFixed(2);
-            client.sendMessage(msg.from,  "Merhaba! \n\nUSD ANLIK: " + ekonomidurum);
+            client.sendMessage(msg.from,  "Merhaba! \n\nDOLAR ANLIK: " + ekonomidurum);
 
           })
 
@@ -243,7 +266,7 @@ client.on('message', msg => {
     else if (msg.body == '!komutlar' || msg.body == "!Komutlar") 
 
     {
-        client.sendMessage(msg.from, '!havadurumu sehiradi\n' + '!dolar\n'+ '!euro')
+        client.sendMessage(msg.from, '!havadurumu sehiradi\n' + '!dolar\n'+ '!euro\n' + '!yazıtura\n' + '!zarat');
         
     }
 }
