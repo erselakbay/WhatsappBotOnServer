@@ -10,6 +10,7 @@ const client = new Client();
 var PersonList = new Array();
 
 var ekonomi = "https://freecurrencyapi.net/api/v2/latest?apikey=1011a820-5205-11ec-aaa3-61829d760e72";
+var gburc = "https://burc-yorumlari.herokuapp.com/get";
 
 /*
 const express = require('express')
@@ -65,7 +66,8 @@ client.on('message', msg => {
     gelen=msg.body.split(' ')
     OyunList=['okey','bilardo','Gartic','Gartic Phone','Among Us','Human Fall Flat','13th friday','Pummel Party','Code Names','Agrou','Secret Neighbor','Ball 3D','Crab Game','Pico Park','Dont Starve Together'];
     yazıtura=['yazı', 'tura'];
-
+    burclar=['balik', 'aslan', 'ikizler', 'oglak', 'koc' , 'boga' ,'yengec','basak','terazi','akrep','yay','kova'];
+/*
     if(hours>=0 && hours < 6)
     {
         var set=1;
@@ -92,9 +94,9 @@ client.on('message', msg => {
 
             }
     }
+*/
 
-
-    else if (msg.body == 'sa' || msg.body == "Sa" || msg.body == "SA" || msg.body == "selamun aleykum"|| msg.body == "selamun aleyküm" || msg.body == "Selamun Aleykum"|| msg.body == "Selamun Aleyküm" || msg.body == "Selamınaleyküm" || msg.body == "selamunaleyküm" || msg.body == "Selamın Aleyküm" || msg.body == "Selamın aleyküm" || msg.body == "Selamunaleykum" || msg.body == "Selamun aleyküm") 
+    if (msg.body == 'sa' || msg.body == "Sa" || msg.body == "SA" || msg.body == "selamun aleykum"|| msg.body == "selamun aleyküm" || msg.body == "Selamun Aleykum"|| msg.body == "Selamun Aleyküm" || msg.body == "Selamınaleyküm" || msg.body == "selamunaleyküm" || msg.body == "Selamın Aleyküm" || msg.body == "Selamın aleyküm" || msg.body == "Selamunaleykum" || msg.body == "Selamun aleyküm") 
     {
         
         client.sendMessage(msg.from, 'aleyküm selam ve rahmetullahi ve berekatuhu ve magfiratuhu ebeden ve daimen. ')
@@ -102,7 +104,7 @@ client.on('message', msg => {
         PersonList=[];
     }
 
-    else if (msg.body == '!oyun' || msg.body == "!oyun") 
+    else if (msg.body == '!oyun' || msg.body == "!Oyun") 
     {
         PersonList=[];
         var rndgame =  OyunList[Math.floor(Math.random()*OyunList.length)];
@@ -123,8 +125,170 @@ client.on('message', msg => {
         client.sendMessage(msg.from, zarr + ' geldi');
 
     }
+    else if(gelen[0] == '!gunlukburc' || gelen[0] == "!Gunlukburc" || gelen[0] == "!günlükburc" || gelen[0] == "!Günlükburc"|| gelen[0] == "!günlükburç" || gelen[0] == "!Günlükburç")
+    {
    
-    else if(gelen[0] == "!dolar" || gelen[0] == "!Dolar")
+        PersonList=[];
+
+        if (gelen[1] == "balık" || gelen[1] ==  "Balık")
+        {
+            gelen[1]="balik";
+        }
+        else if (gelen[1] == "koç" || gelen[1] ==  "Koç")
+        {
+            gelen[1]="koc";
+        }
+        else if (gelen[1] == "boğa" || gelen[1] ==  "Boğa")
+        {
+            gelen[1]="boga";
+        }
+        else if (gelen[1] == "yengeç" || gelen[1] ==  "Yengeç")
+        {
+            gelen[1]="yengec";
+        }
+        else if (gelen[1] == "başak" || gelen[1] ==  "Başak")
+        {
+            gelen[1]="basak";
+        }
+        else if (gelen[1] == "oğlak" || gelen[1] ==  "Oğlak")
+        {
+            gelen[1]="oglak";
+        }
+        gelen[1]= gelen[1].toLowerCase();
+        if(burclar.includes(gelen[1]))
+        {
+            urld=gburc+"/"+gelen[1];
+            var options = { method: 'GET',
+              url: urld,
+               };
+            
+            request(options, function (error, response, body) {
+                
+                var x = JSON.parse(body);          
+                client.sendMessage(msg.from,  "Merhaba! \n\n\n" + "Burcunuz: " +  x[0].Burc + "\n\n" + "Mottonuz: " + x[0].Mottosu+  "\n\n" + "Gezegeniniz: " + x[0].Gezegeni+  "\n\n" + "Elementiniz: " + x[0].Elementi+  "\n\n" + "Günlük Yorumunuz: " +x[0].GunlukYorum);
+    
+              })
+        }
+        else
+        
+        {
+            client.sendMessage(msg.from, "Girdiğiniz burç bulunamadı!")
+        }
+
+
+    }
+    else if(gelen[0] == '!haftalikburc' || gelen[0] == "!Haftalikburc" || gelen[0] == "!haftalıkburc" || gelen[0] == "!Haftalıkburc"|| gelen[0] == "!haftalıkburç"|| gelen[0] == "!Haftalıkburç")
+    {
+   
+        PersonList=[];
+
+
+        if (gelen[1] == "balık" || gelen[1] ==  "Balık")
+        {
+            gelen[1]="balik";
+        }
+        else if (gelen[1] == "koç" || gelen[1] ==  "Koç")
+        {
+            gelen[1]="koc";
+        }
+        else if (gelen[1] == "boğa" || gelen[1] ==  "Boğa")
+        {
+            gelen[1]="boga";
+        }
+        else if (gelen[1] == "yengeç" || gelen[1] ==  "Yengeç")
+        {
+            gelen[1]="yengec";
+        }
+        else if (gelen[1] == "başak" || gelen[1] ==  "Başak")
+        {
+            gelen[1]="basak";
+        }
+        else if (gelen[1] == "oğlak" || gelen[1] ==  "Oğlak")
+        {
+            gelen[1]="oglak";
+        }
+        gelen[1]= gelen[1].toLowerCase();
+        if(burclar.includes(gelen[1]))
+        {
+            urld=gburc+"/"+gelen[1]+"/haftalik";
+      
+            var options = { method: 'GET',
+              url: urld,
+               };
+            
+            request(options, function (error, response, body) {
+                
+                var x = JSON.parse(body);
+    
+                client.sendMessage(msg.from,  "Merhaba! \n\n\n" + "Burcunuz: " +  x[0].Burc + "\n\n" + "Mottonuz: " + x[0].Mottosu + "\n\n" + "Gezegeniniz: " + x[0].Gezegeni + "\n\n" + "Elementiniz: " + x[0].Elementi + "\n\n" + "Haftalık Yorumunuz: " +x[0].Yorum);
+    
+              })
+        }
+        else
+        {
+            client.sendMessage(msg.from, "Girdiğiniz burç bulunamadı!")
+        }
+
+
+    }
+    else if(gelen[0] == '!aylikburc' || gelen[0] == "!Aylikburc"|| gelen[0] == "!aylıkburc"|| gelen[0] == "!Aylıkburc"|| gelen[0] == "!aylıkburç" || gelen[0] == "!Aylıkburç")
+    {
+   
+        PersonList=[];
+
+
+        if (gelen[1] == "balık" || gelen[1] ==  "Balık")
+        {
+            gelen[1]="balik";
+        }
+        else if (gelen[1] == "koç" || gelen[1] ==  "Koç")
+        {
+            gelen[1]="koc";
+        }
+        else if (gelen[1] == "boğa" || gelen[1] ==  "Boğa")
+        {
+            gelen[1]="boga";
+        }
+        else if (gelen[1] == "yengeç" || gelen[1] ==  "Yengeç")
+        {
+            gelen[1]="yengec";
+        }
+        else if (gelen[1] == "başak" || gelen[1] ==  "Başak")
+        {
+            gelen[1]="basak";
+        }
+        else if (gelen[1] == "oğlak" || gelen[1] ==  "Oğlak")
+        {
+            gelen[1]="oglak";
+        }
+        gelen[1]= gelen[1].toLowerCase();
+        if(burclar.includes(gelen[1]))
+        {
+
+            urld=gburc+"/"+gelen[1]+"/aylik";
+      
+            var options = { method: 'GET',
+              url: urld,
+               };
+            
+            request(options, function (error, response, body) {
+                
+        
+                    var x = JSON.parse(body);
+                    client.sendMessage(msg.from,  "Merhaba! \n\n\n" + "Burcunuz: " +  x[0].Burc + "\n\n" + "Mottonuz: " + x[0].Mottosu + "\n\n" + "Gezegeniniz: " + x[0].Gezegeni + "\n\n" + "Elementiniz: " + x[0].Elementi + "\n\n" + "Aylık Yorumunuz: " +x[0].Yorum);
+                 
+                
+    
+              })
+
+        }
+else{
+    client.sendMessage(msg.from, "Girdiğiniz burç bulunamadı!")
+}
+
+
+    }
+    else if(msg.body == "!dolar" || msg.body == "!Dolar")
     {
         PersonList=[];
 
@@ -144,7 +308,7 @@ client.on('message', msg => {
           })
 
     }
-    else if(gelen[0] == "!euro" || gelen[0] == "!Euro")
+    else if(msg.body == "!euro" || msg.body == "!Euro")
     {
         PersonList=[];
 
@@ -177,7 +341,7 @@ client.on('message', msg => {
         request(options, function (error, response, body) {
 
             var x = JSON.parse(body);
-            if(x.cod != 200){          client.sendMessage(msg.from, "girdiginiz sehir bulunamadi!")
+            if(x.cod != 200){          client.sendMessage(msg.from, "Girdiğiniz şehir bulunamadı!")
         return}
           if (error) throw new Error(error);
         
@@ -251,12 +415,12 @@ client.on('message', msg => {
                 var cumle = "Dışarısı fazla soğuk görünüyor. Dikkatli olun!"
             client.sendMessage(msg.from,  "İyi Geceler! \n\nŞehir Adı: "+sehir+"\nHavanın Durumu: "+durum+"\nSıcaklık: "+sicaklik+"\nHissedilen Sıcaklık: "+hissedilen+"\nNem: "+nem+"\nRuzgar: "+ruzgar  + "\n" +oneri +"\n\n" + cumle)
              
+            }
+            else{
+                client.sendMessage(msg.from,  "İyi Geceler! \n\nŞehir Adı: "+sehir+"\nHavanın Durumu: "+durum+"\nSıcaklık: "+sicaklik+"\nHissedilen Sıcaklık: "+hissedilen+"\nNem: "+nem+"\nRuzgar: "+ruzgar  +"\n" + oneri )
+            }
         }
-    else{
-        client.sendMessage(msg.from,  "İyi Geceler! \n\nŞehir Adı: "+sehir+"\nHavanın Durumu: "+durum+"\nSıcaklık: "+sicaklik+"\nHissedilen Sıcaklık: "+hissedilen+"\nNem: "+nem+"\nRuzgar: "+ruzgar  +"\n" + oneri )
-    }
-    }
-         console.log("OK! ")
+         console.log("Bitis! ")
         });
 
         
@@ -266,7 +430,7 @@ client.on('message', msg => {
     else if (msg.body == '!komutlar' || msg.body == "!Komutlar") 
 
     {
-        client.sendMessage(msg.from, '!havadurumu sehiradi\n' + '!dolar\n'+ '!euro\n' + '!yazıtura\n' + '!zarat');
+        client.sendMessage(msg.from, '!havadurumu sehiradi\n' +  '!gunlukburc burcunuz\n'+  '!haftalikburc burcunuz\n'+  '!aylikburc burcunuz\n' + '!dolar\n'+ '!euro\n' + '!yazıtura\n' + '!zarat'  );
         
     }
 }
