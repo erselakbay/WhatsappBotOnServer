@@ -1,3 +1,2 @@
-2021/12/03-15:26:46.610 1b0c Reusing MANIFEST D:\bos beles isler\wp js\WWebJS\session\Default\Local Storage\leveldb/MANIFEST-000001
-2021/12/03-15:26:46.611 1b0c Recovering log #26
-2021/12/03-15:26:46.611 1b0c Reusing old log D:\bos beles isler\wp js\WWebJS\session\Default\Local Storage\leveldb/000026.log 
+2021/12/04-22:50:20.698 3064 Creating DB D:\bos beles isler\wp js\WWebJS\session\Default\Local Storage\leveldb since it was missing.
+2021/12/04-22:50:20.909 3064 Reusing MANIFEST D:\bos beles isler\wp js\WWebJS\session\Default\Local Storage\leveldb/MANIFEST-000001
