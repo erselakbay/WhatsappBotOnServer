@@ -67,7 +67,7 @@ client.on('message', msg => {
     OyunList=['okey','bilardo','Gartic','Gartic Phone','Among Us','Human Fall Flat','13th friday','Pummel Party','Code Names','Agrou','Secret Neighbor','Ball 3D','Crab Game','Pico Park','Dont Starve Together'];
     yazıtura=['yazı', 'tura'];
     burclar=['balik', 'aslan', 'ikizler', 'oglak', 'koc' , 'boga' ,'yengec','basak','terazi','akrep','yay','kova'];
-/*
+
     if(hours>=0 && hours < 6)
     {
         var set=1;
@@ -94,9 +94,9 @@ client.on('message', msg => {
 
             }
     }
-*/
 
-    if (msg.body == 'sa' || msg.body == "Sa" || msg.body == "SA" || msg.body == "selamun aleykum"|| msg.body == "selamun aleyküm" || msg.body == "Selamun Aleykum"|| msg.body == "Selamun Aleyküm" || msg.body == "Selamınaleyküm" || msg.body == "selamunaleyküm" || msg.body == "Selamın Aleyküm" || msg.body == "Selamın aleyküm" || msg.body == "Selamunaleykum" || msg.body == "Selamun aleyküm") 
+
+    else if (msg.body == 'sa' || msg.body == "Sa" || msg.body == "SA" || msg.body == "selamun aleykum"|| msg.body == "selamun aleyküm" || msg.body == "Selamun Aleykum"|| msg.body == "Selamun Aleyküm" || msg.body == "Selamınaleyküm" || msg.body == "selamunaleyküm" || msg.body == "Selamın Aleyküm" || msg.body == "Selamın aleyküm" || msg.body == "Selamunaleykum" || msg.body == "Selamun aleyküm") 
     {
         
         client.sendMessage(msg.from, 'aleyküm selam ve rahmetullahi ve berekatuhu ve magfiratuhu ebeden ve daimen. ')
